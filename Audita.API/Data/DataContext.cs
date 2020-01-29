@@ -8,6 +8,13 @@ namespace Audita.API.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
-        public DbSet<Value> tblSITETABLE { get; set; }
+        public DbSet<Site> tblSITETABLE { get; set; }
+
+        public DbSet<User> tblUSERS { get; set; }
+
+        public DbSet<Tower> tblTOWERTYPE { get; set; }
+
+        public DbSet<Vendor> tblVENDORS { get; set; }
+
     }
 }

@@ -5,21 +5,24 @@ using System.Threading.Tasks;
 using Audita.API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DatingApp.API.Controllers
 {
-    //http:localhost:5000/api/values   
+    //http:localhost:5000/api/sites  
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class SitesController : ControllerBase
     {
         private readonly DataContext _context;
-        public ValuesController(DataContext context)
+        public SitesController(DataContext context)
         {
             this._context = context;
 
         }
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {

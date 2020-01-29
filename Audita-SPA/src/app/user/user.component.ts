@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-site',
-  templateUrl: './site.component.html',
-  styleUrls: ['./site.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class SiteComponent implements OnInit {
+export class UserComponent implements OnInit {
   sites: any;
 
   constructor(private http: HttpClient) { }
@@ -22,5 +22,4 @@ export class SiteComponent implements OnInit {
 
     )
   }
-
 }
