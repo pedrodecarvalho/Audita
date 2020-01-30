@@ -5,18 +5,22 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { ValueComponent } from './value/value.component';
-import { SiteComponent } from './site/site.component';
 import { NavComponent } from './nav/nav.component';
 import { UserComponent } from './user/user.component';
 import { AuthService } from './_services/auth.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       ValueComponent,
-      SiteComponent,
       NavComponent,
-      UserComponent
+      UserComponent,
+      SidebarComponent,
+      HomeComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
