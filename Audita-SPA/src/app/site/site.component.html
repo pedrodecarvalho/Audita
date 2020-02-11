@@ -1,5 +1,16 @@
-<div *ngFor="let site of sites">
+<!-- <div *ngFor="let site of sites">
   {{site.id}},{{site.siteName}} on sites
+</div> -->
 
+<div *ngIf="sitemode==='View'">
+  <ag-grid-angular style="width: 1500px; height: 500px; margin-left: 50px; margin-top: 50px;" class="ag-theme-balham"
+    [columnDefs]="columnDefs" [rowData]="rowData">
+  </ag-grid-angular>
+  <p></p>
+  <app-buttonPanel (editingSite)="editSite($event)"></app-buttonPanel>
+</div>
+
+<div *ngIf="sitemode==='Edit' || sitemode==='New' ">
+  <app-editSite (viewingSite)="viewSite($event)"></app-editSite>
 
 </div>

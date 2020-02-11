@@ -1,32 +1,38 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Audita</a>
+
+  <img src="./assets/img/Audita.JPG" height="60px">
+
 
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Sites <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Access Log</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Users</a>
+    <li class="nav-item" routerLinkActive="router-link-active">
+      <a class="nav-link" [routerLink]="['/home']">Home</a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" (click)='logOut()'>Logout</a>
+    <li class="nav-item" routerLinkActive="router-link-active">
+      <a class="nav-link" [routerLink]="['/site']">Sites</a>
+    </li>
+    <li class="nav-item" routerLinkActive="router-link-active">
+      <a class="nav-link" [routerLink]="['/accesslog']">Access Log</a>
+    </li>
+    <li class="nav-item" routerLinkActive="router-link-active">
+      <a class="nav-link disabled" [routerLink]="['/user']">Users</a>
+    </li>
+
+    <li class="nav-item" routerLinkActive="router-link-active">
+      <a class="nav-link" [routerLink]="['/contactUs']">Contact Us</a>
     </li>
 
   </ul>
 
   <div *ngIf="loggedIn()" class="dropdown">
     <a class="dropdown-toggle text-light">
-      Welcome user
+      User Signed in
     </a>
 
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit Profile</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Logout</a>
+      <a class="dropdown-item" href="#" (click)='logOut()'>Logout</a>
     </div>
   </div>
 
